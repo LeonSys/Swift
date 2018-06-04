@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct Card
+struct Card: Hashable
 {
     var isFaceUp = false
     var isMatched = false
-    var indentifier: Int
-   static  var indentifierFactory = 0
+    private var indentifier: Int
+   
+    static  var indentifierFactory = 0
     
     static func getUniqueIndentifier() -> Int {
         Card.indentifierFactory += 1
